@@ -1,21 +1,25 @@
-<ul>
-  <li *ngFor="let recurso of recursos; let i = index" class="flex items-center justify-between p-2 border-b">
-    <span [class.line-through]="recurso.adquirido">
-      {{ recurso.nombre }} - {{ recurso.categoria }} - {{ recurso.prioridad }}
-    </span>
-    <div>
-      <button
-        (click)="marcarAdquirido(i)"
-        class="bg-blue-500 text-white px-2 py-1 rounded mr-2"
-      >
-        {{ recurso.adquirido ? 'Desmarcar' : 'Adquirido' }}
-      </button>
-      <button
-        (click)="borrarRecurso(i)"
-        class="bg-red-500 text-white px-2 py-1 rounded"
-      >
-        Eliminar
-      </button>
-    </div>
-  </li>
-</ul>
+<div class="bg-white p-4 rounded shadow-md space-y-4 min-h-20 xl:min-h-91">
+
+  <h1 class="text-2xl font-bold text-center mb-4">Listado de Recursos</h1>
+  <div class="bg-gray-100 rounded-xl">
+    <ul>
+      <li *ngFor="let recurso of recursos; let i = index" class="flex items-center justify-between p-2 border-b">
+        <span [class.line-through]="recurso.adquirido">
+          {{ recurso.nombre }} - {{ recurso.categoria }} - {{ recurso.prioridad }}
+        </span>
+        <div>
+          <button (click)="marcarAdquirido(i)" class="cursor-pointer transition-all bg-green-500 text-white px-4 py-1 rounded-lg 
+                    border-green-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[0.5px] not-last:active:border-b-[2px] active:brightness-90 
+                     active:translate-y-[2px]">
+            {{ recurso.adquirido ? 'Desmarcar' : 'Adquirido' }}
+          </button>
+          <button (click)="borrarRecurso(i)" class="cursor-pointer transition-all bg-red-500 text-white px-4 py-1 rounded-lg 
+                    border-red-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[0.5px] active:border-b-[2px] active:brightness-90 
+                     active:translate-y-[2px]">
+            Eliminar
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,17 +1,19 @@
 <form (ngSubmit)="agregarRecurso()" class="bg-white p-4 rounded shadow-md space-y-4">
   <div>
+    <h1 class="text-2xl font-bold text-center mb-4">Gestión de Recursos</h1>
+
     <label class="block font-semibold">Nombre del recurso</label>
-    <input [(ngModel)]="nombre" name="nombre" type="text" required class="w-full border p-2 rounded" />
+    <input [(ngModel)]="nombre" name="nombre" type="text" required class="w-full p-2 rounded-xl bg-gray-200" />
   </div>
 
   <div>
     <label class="block font-semibold">Categoría</label>
-    <input [(ngModel)]="categoria" name="categoria" type="text" required class="w-full border p-2 rounded" />
+    <input [(ngModel)]="categoria" name="categoria" type="text" required class="w-full bg-gray-200 p-2 rounded-xl" />
   </div>
 
   <div>
     <label class="block font-semibold">Prioridad</label>
-    <select [(ngModel)]="prioridad" name="prioridad" required class="w-full border p-2 rounded">
+    <select [(ngModel)]="prioridad" name="prioridad" required class="w-full bg-gray-200 p-2 rounded-xl">
       <option value="" disabled selected>Selecciona una prioridad</option>
       <option value="Alta">Alta</option>
       <option value="Media">Media</option>
@@ -19,7 +21,9 @@
     </select>
   </div>
 
-  <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+  <button type="submit" class="cursor-pointer transition-all bg-orange-500 text-white px-8 py-2 rounded-lg 
+                    border-orange-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] active:brightness-90 
+                     active:translate-y-[2px]">
     Agregar recurso
   </button>
 </form>

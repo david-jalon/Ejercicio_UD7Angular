@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-recurso-form',
   standalone: true, 
-  imports: [FormsModule],
+  imports: [FormsModule], // IMportamos FormsModule para usar ngModel
   templateUrl: './recurso-form.component.html',
   styleUrl: './recurso-form.component.css'
 })

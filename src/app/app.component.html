@@ -1,9 +1,9 @@
-<main class="container mx-auto p-4">
-  <h1 class="text-2xl font-bold text-center mb-4">Gestión de Recursos</h1>
+<div class="bg-linear-to-br from-purple-900 to-blue-900 min-h-screen pt-50">
+  <main class="flex flex-col max-w-lg mx-auto min-h-80 p-4 pt-20 gap-[20px] xl:flex-row xl:max-w-screen-lg">
 
-  <app-recurso-form (recursoAgregado)="agregarRecurso($event)"></app-recurso-form>
-  <app-recurso-list
-  [recursos]="recursos"
-  (toggleAdquirido)="toggleAdquirido($event)"
-  (eliminarRecurso)="eliminarRecurso($event)"></app-recurso-list>
-</main>
+    <app-recurso-form class="w-full xl:w-1/2" (recursoAgregado)="agregarRecurso($event)"></app-recurso-form>
+    <app-recurso-list class="w-full xl:w-1/2" [recursos]="recursos" (toggleAdquirido)="toggleAdquirido($event)"
+      (eliminarRecurso)="eliminarRecurso($event)"></app-recurso-list>
+  </main>
+</div>
+

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RecursoListComponent } from './recurso-list.component';
 
 describe('RecursoListComponent', () => {
