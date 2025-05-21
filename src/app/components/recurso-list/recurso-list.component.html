@@ -1,0 +1,21 @@
+<ul>
+  <li *ngFor="let recurso of recursos; let i = index" class="flex items-center justify-between p-2 border-b">
+    <span [class.line-through]="recurso.adquirido">
+      {{ recurso.nombre }} - {{ recurso.categoria }} - {{ recurso.prioridad }}
+    </span>
+    <div>
+      <button
+        (click)="marcarAdquirido(i)"
+        class="bg-blue-500 text-white px-2 py-1 rounded mr-2"
+      >
+        {{ recurso.adquirido ? 'Desmarcar' : 'Adquirido' }}
+      </button>
+      <button
+        (click)="borrarRecurso(i)"
+        class="bg-red-500 text-white px-2 py-1 rounded"
+      >
+        Eliminar
+      </button>
+    </div>
+  </li>
+</ul>

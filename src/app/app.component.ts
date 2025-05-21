@@ -1,12 +1,30 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RecursoFormComponent } from './components/recurso-form/recurso-form.component';
+import { RecursoListComponent } from './components/recurso-list/recurso-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RecursoFormComponent, RecursoListComponent], // <-- Aquí debe ir con corchetes y separado por comas
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'UD7_DavidJalon';
+  recursos: any[] = [];
+
+  agregarRecurso(nuevoRecurso: any) {
+    this.recursos = [...this.recursos, nuevoRecurso];
+  }
+
+  toggleAdquirido(index: number) {
+    this.recursos = this.recursos.map((rec, i) => {
+      if (i === index) rec.adquirido = !rec.adquirido;
+      return rec;
+    });
+  }
+
+  eliminarRecurso(index: number) {
+    this.recursos = this.recursos.filter((_, i) => i !== index);
+  }
 }
+

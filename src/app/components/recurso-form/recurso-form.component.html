@@ -1,0 +1,25 @@
+<form (ngSubmit)="agregarRecurso()" class="bg-white p-4 rounded shadow-md space-y-4">
+  <div>
+    <label class="block font-semibold">Nombre del recurso</label>
+    <input [(ngModel)]="nombre" name="nombre" type="text" required class="w-full border p-2 rounded" />
+  </div>
+
+  <div>
+    <label class="block font-semibold">Categoría</label>
+    <input [(ngModel)]="categoria" name="categoria" type="text" required class="w-full border p-2 rounded" />
+  </div>
+
+  <div>
+    <label class="block font-semibold">Prioridad</label>
+    <select [(ngModel)]="prioridad" name="prioridad" required class="w-full border p-2 rounded">
+      <option value="" disabled selected>Selecciona una prioridad</option>
+      <option value="Alta">Alta</option>
+      <option value="Media">Media</option>
+      <option value="Baja">Baja</option>
+    </select>
+  </div>
+
+  <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Agregar recurso
+  </button>
+</form>
