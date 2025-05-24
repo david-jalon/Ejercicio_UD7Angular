@@ -13,8 +13,10 @@ export class RecursoFormComponent {
   categoria: string = '';
   prioridad: string = '';
 
+  //Emite el evento de agregar los datos
   @Output() recursoAgregado = new EventEmitter<any>();
 
+  //Recibe los recursos
   agregarRecurso() {
     if (this.nombre && this.categoria && this.prioridad) {
       this.recursoAgregado.emit({
